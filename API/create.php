@@ -13,7 +13,7 @@ include_once "../Models/Post.php";
 
 $database = New Database();
 $db = $database->connect();
-
+error_reporting(E_ALL);
 $post = new Post($db);
 
 $data = json_decode(file_get_contents("php://input"));
