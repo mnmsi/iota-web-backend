@@ -1,9 +1,10 @@
 <?php
 // headers
-header("Access-Control-Allow-Origin: *");
-header("Access-Control-Allow-Headers: Accept");
+header('Access-Control-Allow-Origin: *');
+
 header('Access-Control-Allow-Methods: GET, POST');
-header("Access-Control-Allow-Headers: X-Requested-With, Content-Type, Origin, Cache-Control, Pragma, Authorization, Accept, Accept-Encoding");
+
+header("Access-Control-Allow-Headers: X-Requested-With");
 include_once "../config/Database.php";
 include_once "../Models/Post.php";
 
