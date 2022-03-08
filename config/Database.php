@@ -4,9 +4,9 @@ class Database
 {
     // database property
     private $host = 'localhost';
-    private $db_name = 'formData';
+    private $db_name = 'formdata';
     private $username = "root";
-    private $db_password = "";
+    private $db_password = "12345678";
     private $conn;
 
     // connect database

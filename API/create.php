@@ -1,10 +1,9 @@
 <?php
 // headers
+header("Access-Control-Allow-Origin", "https://iotait.tech");
 header('Access-Control-Allow-Origin: *');
-
-header('Access-Control-Allow-Methods: GET, POST');
-
-header("Access-Control-Allow-Headers: X-Requested-With");
+header("Access-Control-Allow-Headers: *");
+header("Access-Control-Allow-Methods", "DELETE, POST, GET, OPTIONS");
 include_once "../config/Database.php";
 include_once "../Models/Post.php";
 
@@ -12,12 +11,11 @@ include_once "../Models/Post.php";
 
 $database = new Database();
 $db = $database->connect();
-error_reporting(E_ALL);
 $post = new Post($db);
 
-$data = json_decode(file_get_contents("php://input"));
-$post->name = $data->name;
-$post->email = $data->email;
+//$data = json_decode(file_get_contents("php://input"));
+$post->name = $_REQUEST["name"];
+$post->email = $_REQUEST["email"];
 if ($post->create()) {
     echo json_encode(array(
         "status" => 1,
